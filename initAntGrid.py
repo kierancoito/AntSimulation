@@ -4,11 +4,11 @@ import variables
 antProbability = 0.6
 
 def initAntGrid(n):
-    grid = np.zeroes((n + 2, n + 2))
-    grid[0][:] = variables.BORDER
-    grid[-1][:] = variables.BORDER
-    grid[:][-1] = variables.BORDER
-    grid[:][0] = variables.BORDER
+    grid = np.zeros((n+2, n+2))
+    grid[:,0] = np.ones(n+2) * variables.BORDER
+    grid[:,-1] = np.ones(n+2) * variables.BORDER
+    grid[0,:] = np.ones(n+2) * variables.BORDER
+    grid[-1,:] = np.ones(n+2) * variables.BORDER
 
     for i in range(1, n-1):
         for j in range(1, n-1):
@@ -17,3 +17,4 @@ def initAntGrid(n):
                 grid[i][j] = float(randomDirection)
 
     return grid
+print(initAntGrid(6))

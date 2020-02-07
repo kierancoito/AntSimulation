@@ -1,5 +1,7 @@
 import variables as v
 import numpy as np
+
+
 def initPherGrid(grid_size):
     '''Generate pheromone list
     Precondition:
@@ -18,3 +20,4 @@ def initPherGrid(grid_size):
     return grid
 
 test = initPherGrid(5)
+print(test)
